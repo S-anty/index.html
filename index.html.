@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to this random website</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-weight: bold;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to this random website</h1>
+    <button onclick="changeContent()">Push me</button>
+    
+    <script>
+        function changeContent() {
+            document.body.style.backgroundColor = "lime";
+            document.querySelector('h1').innerHTML = getRandomCyrillicText(28);
+            document.querySelector('button').innerHTML = getRandomCyrillicText(6);
+        }
+
+        function getRandomCyrillicText(length) {
+            const cyrillicChars = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += cyrillicChars.charAt(Math.floor(Math.random() * cyrillicChars.length));
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
